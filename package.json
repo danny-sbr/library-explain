@@ -20,6 +20,7 @@
     "onscan.js": "^1.5.2",
     "pinia": "^2.2.4",
     "prismjs": "^1.29.0",
+    "qrcode": "^1.5.4",
     "vue": "^3.5.12",
     "vue-pdf-embed": "^2.1.1",
     "vue-router": "^4.4.5"
