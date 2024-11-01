@@ -33,6 +33,7 @@
           <li>完整的拖放支援</li>
         </ul>
       </div>
+
       <div class="feature">
         <h2>QR Code 產生器</h2>
         <p>使用 qrcode.js 函式庫，輕鬆在 Vue 3 中產生 QR Code。</p>
@@ -41,6 +42,18 @@
           <li>支援自訂 QR Code 大小和樣式</li>
           <li>可設定錯誤修正等級</li>
           <li>支援多種輸出格式（DataURL、Canvas、SVG）</li>
+        </ul>
+      </div>
+
+      <div class="feature">
+        <h2>列印功能</h2>
+        <p>使用 Print.js 實作的網頁列印功能，提供：</p>
+        <ul>
+          <li>支援多種內容類型列印（HTML、PDF、圖片、JSON）</li>
+          <li>自訂列印標題與頁尾</li>
+          <li>完整的樣式保留功能</li>
+          <li>支援進階列印選項設定</li>
+          <li>簡單的訂單資訊列印範例</li>
         </ul>
       </div>
     </div>
