@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <div class="home">
+  <div class="container">
     <h1>功能展示與程式碼說明</h1>
 
     <div class="feature-list">
@@ -33,12 +33,22 @@
           <li>完整的拖放支援</li>
         </ul>
       </div>
+      <div class="feature">
+        <h2>QR Code 產生器</h2>
+        <p>使用 qrcode.js 函式庫，輕鬆在 Vue 3 中產生 QR Code。</p>
+        <ul>
+          <li>簡單快速產生 QR Code</li>
+          <li>支援自訂 QR Code 大小和樣式</li>
+          <li>可設定錯誤修正等級</li>
+          <li>支援多種輸出格式（DataURL、Canvas、SVG）</li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
 
-<style scoped>
-.home {
+<style scoped lang="scss">
+.container {
   padding: 2rem;
 }
 

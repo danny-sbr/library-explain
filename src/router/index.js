@@ -29,6 +29,11 @@ const router = createRouter({
       name: 'qrcode',
       component: () => import('../views/QRcodeView/QRcodeView.vue'),
     },
+    {
+      path: '/print-js',
+      name: 'print-js',
+      component: () => import('../views/PrintJsView/PrintJsView.vue'),
+    },
   ],
 })
 

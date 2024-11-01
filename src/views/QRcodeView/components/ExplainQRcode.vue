@@ -17,7 +17,7 @@ onMounted(async () => {
     console.error(error)
   }
 })
-<\/script>
+<\\/script>
 
 <template>
   <div>
