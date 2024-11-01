@@ -8,6 +8,7 @@ import { RouterLink, RouterView } from 'vue-router'
       <RouterLink to="/scan">Scan</RouterLink>
       <RouterLink to="/image-capture">Image Capture</RouterLink>
       <RouterLink to="/full-calendar">Full Calendar</RouterLink>
+      <RouterLink to="/qrcode">QR Code</RouterLink>
     </nav>
   </header>
 

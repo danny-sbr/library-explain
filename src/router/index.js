@@ -24,6 +24,11 @@ const router = createRouter({
       name: 'full-calendar',
       component: () => import('../views/FullCalendarView/FullCalendarView.vue'),
     },
+    {
+      path: '/qrcode',
+      name: 'qrcode',
+      component: () => import('../views/QRcodeView/QRcodeView.vue'),
+    },
   ],
 })
 
