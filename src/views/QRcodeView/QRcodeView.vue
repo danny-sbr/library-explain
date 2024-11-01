@@ -3,15 +3,7 @@ import MyQRcode from './components/MyQRcode.vue'
 import ExplainQRcode from './components/ExplainQRcode.vue'
 </script>
 <template>
-  <div class="center">
-    <MyQRcode />
-  </div>
+  <MyQRcode />
   <ExplainQRcode />
 </template>
-<style scoped lang="scss">
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-</style>
+<style scoped lang="scss"></style>

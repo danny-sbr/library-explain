@@ -55,6 +55,14 @@ const calendarOptions = ref({
     center: 'title',
     right: 'dayGridMonth,timeGridWeek,timeGridDay',
   },
+  buttonText: {
+    today: '今天',
+    month: '月',
+    week: '週',
+    day: '日',
+    list: '列表',
+  },
+  locale: 'zh-tw',
   initialView: 'dayGridMonth',
   initialEvents: INITIAL_EVENTS,
   editable: true,
@@ -71,7 +79,6 @@ const calendarOptions = ref({
   contentHeight: 500,
   aspectRatio: 1.5,
   nowIndicator: true,
-  locale: 'zh-tw',
   timeZone: 'local',
 
   // 事件處理
@@ -111,15 +118,17 @@ function renderEventContent(arg) {
   return { html: `<b>${arg.timeText}</b> <i>${arg.event.title}</i>` }
 }
 </script>
+
 <template>
+  <h1 class="title">FullCalendar 功能展示</h1>
   <div class="demo-app">
     <div class="demo-app-sidebar">
       <div class="demo-app-sidebar-section">
-        <h2>Instructions</h2>
+        <h2>使用說明</h2>
         <ul>
-          <li>Select dates and you will be prompted to create a new event</li>
-          <li>Drag, drop, and resize events</li>
-          <li>Click an event to delete it</li>
+          <li>選擇日期後會提示您建立新活動</li>
+          <li>可以拖曳、放置和調整活動大小</li>
+          <li>點擊活動即可刪除</li>
         </ul>
       </div>
       <div class="demo-app-sidebar-section">
@@ -203,5 +212,8 @@ b {
 .fc {
   max-width: 1100px;
   margin: 0 auto;
+}
+.title {
+  text-align: center;
 }
 </style>

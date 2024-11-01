@@ -14,10 +14,19 @@ onMounted(async () => {
 })
 </script>
 <template>
-  <div>
+  <h1 class="title">QR Code 產生器功能展示</h1>
+  <div class="center">
     <img :src="qrCodeUrl" alt="QR Code" />
     <p>{{ qrText }}</p>
-    <!-- 顯示 QR Code 的文字 -->
   </div>
 </template>
-<style scoped></style>
+<style scoped>
+.title {
+  text-align: center;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>

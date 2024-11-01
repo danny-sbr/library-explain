@@ -18,6 +18,14 @@ const handlePrint = () => {
 
 <template>
   <div class="print-container">
+    <h1 class="title">Print.js 功能展示</h1>
+    <div class="instruction">
+      <p>請點擊下方按鈕列印訂單資訊</p>
+      <ul>
+        <li>點擊按鈕後，會開啟瀏覽器列印功能，列印出訂單資訊</li>
+        <li>列印的內容會包含訂單編號、客戶姓名和自定義的 Header</li>
+      </ul>
+    </div>
     <div class="print-controls">
       <button @click="handlePrint" class="print-btn">列印訂單資訊</button>
     </div>
@@ -79,5 +87,23 @@ const handlePrint = () => {
 .label {
   font-weight: bold;
   min-width: 80px;
+}
+.instruction {
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+
+  ul {
+    padding-left: 20px;
+  }
+
+  li {
+    margin-bottom: 8px;
+    color: #666;
+  }
+}
+.title {
+  text-align: center;
 }
 </style>

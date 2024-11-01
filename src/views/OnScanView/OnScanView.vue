@@ -4,15 +4,7 @@ import ExplainScan from '@/views/OnScanView/components/ExplainScan.vue'
 </script>
 <template>
   <MyScan />
-  <div class="center">
-    <ExplainScan />
-  </div>
+  <ExplainScan />
 </template>
 
-<style scope>
-.center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-</style>
+<style scope></style>

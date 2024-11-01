@@ -99,8 +99,8 @@ onUnmounted(() => {
 </script>
 
 <template>
+  <h1 class="title">條碼掃描器功能展示</h1>
   <div class="scanner-container">
-    <h3>條碼掃描器測試區</h3>
     <div class="instruction">
       <p>請在下方輸入框進行測試：</p>
       <ul>
@@ -154,5 +154,8 @@ onUnmounted(() => {
     border-color: #4caf50;
     outline: none;
   }
+}
+.title {
+  text-align: center;
 }
 </style>
