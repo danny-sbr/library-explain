@@ -61,7 +61,7 @@ onMounted(() => {
     // 掃描碼開頭的前綴按鍵代碼（若有）
     prefixKeyCodes: [],
 
-    // 忽略掃描事件��當焦點在指定的元素上時（例如輸入框）
+    // 忽略掃描事件，當焦點在指定的元素上時（例如輸入框）
     ignoreIfFocusOn: 'input, textarea',
 
     // 掃描按鈕的按鍵代碼，僅當按鈕本身即是按鍵時有效
@@ -99,11 +99,11 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <h1 class="title">條碼掃描器功能展示</h1>
-  <div class="scanner-container">
-    <div class="instruction">
-      <p>請在下方輸入框進行測試：</p>
-      <ul>
+  <h1 class="text-center">條碼掃描器功能展示</h1>
+  <div class="max-w-[600px] mx-auto p-5">
+    <div class="bg-gray-100 p-4 rounded-lg mb-4">
+      <p class="mb-4">請在下方輸入框進行測試：</p>
+      <ul class="pl-5 text-gray-600 space-y-6 list-disc">
         <li>可以使用實體條碼掃描器掃描</li>
         <li>可以直接用鍵盤輸入文字</li>
         <li>按下 F12 開啟瀏覽器開發者工具</li>
@@ -114,48 +114,7 @@ onUnmounted(() => {
       type="text"
       id="reader"
       placeholder="請在此處掃描或輸入"
-      class="scanner-input"
+      class="w-full p-2.5 text-base border-2 border-gray-300 rounded mt-2.5 focus:border-green-500 focus:outline-none"
     />
   </div>
 </template>
-
-<style scoped lang="scss">
-.scanner-container {
-  padding: 20px;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.instruction {
-  background-color: #f5f5f5;
-  padding: 15px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-
-  ul {
-    padding-left: 20px;
-  }
-
-  li {
-    margin-bottom: 8px;
-    color: #666;
-  }
-}
-
-.scanner-input {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 2px solid #ddd;
-  border-radius: 4px;
-  margin-top: 10px;
-
-  &:focus {
-    border-color: #4caf50;
-    outline: none;
-  }
-}
-.title {
-  text-align: center;
-}
-</style>
