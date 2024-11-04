@@ -11,6 +11,7 @@ import { RouterLink, RouterView } from 'vue-router'
       <RouterLink to="/qrcode">QR Code</RouterLink>
       <RouterLink to="/print-js">Print JS</RouterLink>
     </nav>
+    <h1 class="text-2xl font-bold text-red-500">Vue 3</h1>
   </header>
 
   <article class="container">
