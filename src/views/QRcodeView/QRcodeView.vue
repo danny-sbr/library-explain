@@ -6,4 +6,3 @@ import ExplainQRcode from './components/ExplainQRcode.vue'
   <MyQRcode />
   <ExplainQRcode />
 </template>
-<style scoped lang="scss"></style>

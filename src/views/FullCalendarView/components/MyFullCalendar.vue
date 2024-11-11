@@ -120,100 +120,51 @@ function renderEventContent(arg) {
 </script>
 
 <template>
-  <h1 class="title">FullCalendar 功能展示</h1>
-  <div class="demo-app">
-    <div class="demo-app-sidebar">
-      <div class="demo-app-sidebar-section">
-        <h2>使用說明</h2>
-        <ul>
+  <h1 class="text-center text-2xl font-bold mb-8">FullCalendar 功能展示</h1>
+  <div class="flex min-h-screen font-sans text-sm">
+    <div class="w-72 bg-blue-50 border-r border-gray-300 p-6">
+      <div class="mb-6">
+        <h2 class="text-lg font-semibold">使用說明</h2>
+        <ul class="list-disc list-inside mt-4">
           <li>選擇日期後會提示您建立新活動</li>
           <li>可以拖曳、放置和調整活動大小</li>
           <li>點擊活動即可刪除</li>
         </ul>
       </div>
-      <div class="demo-app-sidebar-section">
-        <label>
+      <div class="mb-6">
+        <label class="flex items-center space-x-2">
           <input
             type="checkbox"
             :checked="calendarOptions.weekends"
             @change="handleWeekendsToggle"
+            class="form-checkbox h-5 w-5 text-blue-600"
           />
-          toggle weekends
+          <span>顯示週末</span>
         </label>
       </div>
-      <div class="demo-app-sidebar-section">
-        <h2>All Events ({{ currentEvents.length }})</h2>
-        <ul>
-          <li v-for="event in currentEvents" :key="event.id">
-            <b>{{ event.startStr }}</b>
-            <i>{{ event.title }}</i>
+      <div>
+        <h2 class="text-lg font-semibold">
+          所有事件 ({{ currentEvents.length }})
+        </h2>
+        <ul class="mt-4 space-y-2">
+          <li
+            v-for="event in currentEvents"
+            :key="event.id"
+            class="flex items-center"
+          >
+            <b class="mr-2">{{ event.startStr }}</b>
+            <i class="text-gray-600">{{ event.title }}</i>
           </li>
         </ul>
       </div>
     </div>
-    <div class="demo-app-main">
-      <FullCalendar class="demo-app-calendar" :options="calendarOptions">
+    <div class="flex-grow p-6">
+      <FullCalendar class="w-full" :options="calendarOptions">
         <template v-slot:eventContent="arg">
-          <b>{{ arg.timeText }}</b>
+          <b class="mr-1">{{ arg.timeText }}</b>
           <i>{{ arg.event.title }}</i>
         </template>
       </FullCalendar>
     </div>
   </div>
 </template>
-<style scoped>
-h2 {
-  margin: 0;
-  font-size: 16px;
-}
-
-ul {
-  margin: 0;
-  padding: 0 0 0 1.5em;
-}
-
-li {
-  margin: 1.5em 0;
-  padding: 0;
-}
-
-b {
-  /* 用於事件日期/時間 */
-  margin-right: 3px;
-}
-
-.demo-app {
-  display: flex;
-  min-height: 100%;
-  font-family:
-    Arial,
-    Helvetica Neue,
-    Helvetica,
-    sans-serif;
-  font-size: 14px;
-}
-
-.demo-app-sidebar {
-  width: 300px;
-  line-height: 1.5;
-  background: #eaf9ff;
-  border-right: 1px solid #d3e2e8;
-}
-
-.demo-app-sidebar-section {
-  padding: 2em;
-}
-
-.demo-app-main {
-  flex-grow: 1;
-  padding: 3em;
-}
-
-.fc {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-.title {
-  text-align: center;
-}
-</style>

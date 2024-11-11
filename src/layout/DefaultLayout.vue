@@ -8,6 +8,7 @@ const links = [
   { to: '/full-calendar', text: '活動日曆' },
   { to: '/qrcode', text: 'QR Code' },
   { to: '/print-js', text: '列印功能' },
+  { to: '/echart', text: 'EChart' },
 ]
 </script>
 
@@ -25,7 +26,7 @@ const links = [
     </nav>
   </header>
 
-  <article class="max-w-[1200px] mx-auto py-4 px-0 flex-grow">
+  <article class="container mx-auto">
     <slot />
   </article>
 

@@ -46,7 +46,7 @@ QRCode.toCanvas(canvas, text, options)`
 </script>
 
 <template>
-  <div class="container">
+  <div>
     <h1>QR Code 產生器</h1>
     <p>使用 qrcode.js 函式庫在 Vue 3 中產生 QR Code。</p>
 
@@ -74,7 +74,9 @@ QRCode.toCanvas(canvas, text, options)`
     <CodeBlock>{{ advancedCode }}</CodeBlock>
 
     <h2>選項說明</h2>
-    <table>
+    <table
+      class="block md:table overflow-x-auto md:overflow-x-visible whitespace-nowrap md:whitespace-normal"
+    >
       <thead>
         <tr>
           <th>選項</th>
@@ -122,47 +124,19 @@ QRCode.toCanvas(canvas, text, options)`
     <a
       href="https://www.npmjs.com/package/qrcode"
       target="_blank"
-      class="styled-link"
+      class="text-blue-500 hover:text-blue-600 underline"
       >qrcode 官方網站</a
     >
   </p>
 </template>
 
 <style scoped>
-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin: 1rem 0;
-}
-
 th,
 td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
+  @apply border border-gray-300 p-2 text-left;
 }
 
 th {
-  background-color: #f5f5f5;
-}
-
-@media screen and (max-width: 768px) {
-  table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-}
-
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-.styled-link {
-  color: #007bff;
-  text-decoration: none;
-  transition: color 0.3s ease;
+  @apply bg-gray-100;
 }
 </style>

@@ -19,7 +19,7 @@ const captureScreenshot = async () => {
 
 <template>
   <h1 class="title">網頁截圖功能展示</h1>
-  <div class="container">
+  <div>
     <div ref="captureArea" class="capture-area">
       <h2 class="display">這是要截圖的內容</h2>
       <p class="content">這段文字和內容會被轉換成圖片。</p>
@@ -42,65 +42,42 @@ const captureScreenshot = async () => {
 
 <style scoped>
 .title {
-  text-align: center;
+  @apply text-center;
 }
 
 .container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+  @apply max-w-[800px] mx-auto p-5;
 }
 
 .capture-area {
-  padding: 30px;
-  background-color: #f8f9fa;
-  border: 2px solid #e9ecef;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  @apply p-8 bg-gray-50 border-2 border-gray-200 rounded-lg mb-5 shadow-sm;
 }
 
 .display {
-  color: #2c3e50;
-  margin-bottom: 16px;
-  text-align: center;
+  @apply text-gray-800 mb-4 text-center;
 }
 
 .content {
-  color: #495057;
-  line-height: 1.6;
+  @apply text-gray-600 leading-relaxed;
 }
 
 .instruction {
-  margin-top: 20px;
-  padding: 15px;
-  background-color: #e9ecef;
-  border-radius: 6px;
-  color: #495057;
+  @apply mt-5 p-4 bg-gray-200 rounded-md text-gray-600;
 }
 
 .capture-btn {
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 4px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  @apply bg-green-500 text-white border-0 px-6 py-3 rounded text-base cursor-pointer transition-colors duration-300;
 }
 
 .capture-btn:hover {
-  background-color: #45a049;
+  @apply bg-green-600;
 }
 
 .screenshot-container {
-  margin-top: 20px;
+  @apply mt-5;
 }
 
 .screenshot-img {
-  max-width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  @apply max-w-full rounded-lg shadow-md;
 }
 </style>

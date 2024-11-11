@@ -66,6 +66,18 @@
           <li>簡單的訂單資訊列印範例</li>
         </ul>
       </div>
+
+      <div class="bg-gray-50 p-6 rounded-lg shadow">
+        <h2 class="text-blue-500 mb-4 text-2xl">ECharts 圖表</h2>
+        <p class="text-gray-600 mb-4">使用 ECharts 實作的圖表功能，提供：</p>
+        <ul class="pl-6 space-y-2 text-gray-600">
+          <li>支援多種圖表類型</li>
+          <li>自訂圖表樣式</li>
+          <li>支援多種輸出格式</li>
+          <li>支援進階圖表選項設定</li>
+          <li>簡單的圖表範例</li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>

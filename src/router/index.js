@@ -34,6 +34,11 @@ const router = createRouter({
       name: 'print-js',
       component: () => import('../views/PrintJsView/PrintJsView.vue'),
     },
+    {
+      path: '/echart',
+      name: 'echart',
+      component: () => import('../views/EChartView/EChartView.vue'),
+    },
   ],
 })
 

@@ -16,6 +16,7 @@
     "@fullcalendar/interaction": "^6.1.15",
     "@fullcalendar/timegrid": "^6.1.15",
     "@fullcalendar/vue3": "^6.1.15",
+    "echarts": "^5.5.1",
     "html2canvas": "^1.4.1",
     "onscan.js": "^1.5.2",
     "pinia": "^2.2.4",
