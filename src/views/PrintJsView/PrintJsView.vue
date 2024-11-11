@@ -7,5 +7,3 @@ import ExplainPrintJS from './components/ExplainPrintJS.vue'
   <MyPrintJS />
   <ExplainPrintJS />
 </template>
-
-<style scoped></style>

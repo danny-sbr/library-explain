@@ -14,19 +14,10 @@ onMounted(async () => {
 })
 </script>
 <template>
-  <h1 class="title">QR Code 產生器功能展示</h1>
-  <div class="center">
+  <h1 class="text-center">QR Code 產生器功能展示</h1>
+  <div class="flex items-center justify-center">
     <img :src="qrCodeUrl" alt="QR Code" />
     <p>{{ qrText }}</p>
   </div>
 </template>
-<style scoped>
-.title {
-  text-align: center;
-}
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-</style>
+<style scoped></style>
