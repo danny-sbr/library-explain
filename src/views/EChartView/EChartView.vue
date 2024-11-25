@@ -1,80 +1,33 @@
 <script setup>
-import { useEChart } from './useEChart'
-import { ref } from 'vue'
-import EchartComp1 from './components/EchartComp1.vue'
-const chartRef = ref(null)
-
-const a = {
-  title: {
-    text: 'ECharts 假資料圖表',
-    left: 'center',
-    top: '10%',
-    textStyle: {
-      color: '#000',
-    },
-  },
-  tooltip: {
-    trigger: 'axis',
-  },
-  xAxis: {
-    type: 'category',
-    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-  },
-  yAxis: {
-    type: 'value',
-  },
-  series: [{ data: [90, 180, 120, 60, 95, 130, 160], type: 'bar' }],
-  dataZoom: [
-    {
-      type: 'slider',
-      show: false,
-      start: 0,
-      end: 100,
-    },
-  ],
-}
-const b = {
-  title: {
-    text: 'ECharts 樣例圖表',
-    left: 'center',
-    top: '10%',
-    textStyle: {
-      color: '#000',
-    },
-  },
-  tooltip: {
-    trigger: 'axis',
-  },
-  xAxis: {
-    type: 'category',
-    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-  },
-  yAxis: {
-    type: 'value',
-  },
-  series: [{ data: [120, 200, 150, 80, 70, 110, 130], type: 'bar' }],
-  dataZoom: [
-    {
-      type: 'slider',
-      show: true,
-      start: 0,
-      end: 100,
-    },
-  ],
-}
-
-const aRef = ref(a)
-const bRef = ref(b)
-const { setOption } = useEChart(chartRef, a)
+import BasicLine from './components/Chart/BasicLine.vue'
+import BasicPie from './components/Chart/BasicPie.vue'
+import StackedBar from './components/Chart/StackedBar.vue'
+import BasicBar from './components/Chart/BasicBar.vue'
+import BarLineMix from './components/Chart/BarLineMix.vue'
+import CategoryComparison from './components/Chart/CategoryComparison.vue'
+import HorizontalBar from './components/Chart/HorizontalBar.vue'
 </script>
 <template>
-  <button class="btn" @click="setOption(aRef)">圖表 A</button>
-  <button class="btn" @click="setOption(bRef)">圖表 B</button>
-  <div ref="chartRef" style="width: 100%; height: 100vh"></div>
-  <EchartComp1 />
+  <div class="grid grid-rows-12 grid-cols-12 h-[calc(100vh-60px)] w-full">
+    <div class="row-span-4 col-span-6">
+      <StackedBar />
+    </div>
+    <div class="row-span-4 col-span-6">
+      <BasicPie />
+    </div>
+    <div class="row-span-4 col-span-6">
+      <BasicLine />
+    </div>
+    <div class="row-span-4 col-span-6">
+      <BasicBar />
+    </div>
+    <div class="row-span-4 col-span-6">
+      <BarLineMix />
+    </div>
+    <div class="row-span-4 col-span-6">
+      <CategoryComparison />
+    </div>
+  </div>
+  <HorizontalBar />
 </template>
-<style scoped>
-.btn {
-  @apply px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50;
-}
-</style>
+<style scoped></style>
