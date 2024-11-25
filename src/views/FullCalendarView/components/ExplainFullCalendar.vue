@@ -3,7 +3,7 @@ import CodeBlock from '@/components/CodeBlock.vue'
 import { codeString } from './explainFullCalendar'
 </script>
 <template>
-  <div class="max-w-4xl mx-auto px-4 py-8">
+  <div class="py-8">
     <h2 class="text-3xl font-bold text-gray-800 mb-6">
       使用 FullCalendar 製作活動日曆
     </h2>

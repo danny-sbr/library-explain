@@ -120,7 +120,7 @@ function renderEventContent(arg) {
 </script>
 
 <template>
-  <h1 class="text-center text-2xl font-bold mb-8">FullCalendar 功能展示</h1>
+  <h1 class="text-center">FullCalendar 功能展示</h1>
   <div class="flex min-h-screen font-sans text-sm">
     <div class="w-72 bg-blue-50 border-r border-gray-300 p-6">
       <div class="mb-6">

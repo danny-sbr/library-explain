@@ -47,70 +47,98 @@ QRCode.toCanvas(canvas, text, options)`
 
 <template>
   <div>
-    <h1>QR Code 產生器</h1>
-    <p>使用 qrcode.js 函式庫在 Vue 3 中產生 QR Code。</p>
+    <h2 class="text-3xl font-bold mb-4 text-gray-800">QR Code 產生器</h2>
+    <p class="text-gray-600 mb-8">
+      使用 qrcode.js 函式庫在 Vue 3 中產生 QR Code。
+    </p>
 
-    <h2>快速入門</h2>
-    <ol>
-      <li>安裝 qrcode.js 套件</li>
-      <CodeBlock>{{ installCode }}</CodeBlock>
-      <li>在元件中匯入並使用</li>
-    </ol>
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4 text-gray-700">快速入門</h2>
+      <ol class="space-y-4">
+        <li class="flex items-center space-x-2">
+          <span
+            class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center"
+            >1</span
+          >
+          <span>安裝 qrcode.js 套件</span>
+        </li>
+        <CodeBlock class="my-4">{{ installCode }}</CodeBlock>
+        <li class="flex items-center space-x-2">
+          <span
+            class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center"
+            >2</span
+          >
+          <span>在元件中匯入並使用</span>
+        </li>
+      </ol>
+    </section>
 
-    <h2>基本使用範例</h2>
-    <p>以下是最基本的 QR Code 產生範例：</p>
-    <CodeBlock>{{ basicCode }}</CodeBlock>
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4 text-gray-700">基本使用範例</h2>
+      <p class="text-gray-600 mb-4">以下是最基本的 QR Code 產生範例：</p>
+      <CodeBlock class="my-4">{{ basicCode }}</CodeBlock>
+    </section>
 
-    <h2>功能特點</h2>
-    <ul>
-      <li>支援多種輸出格式（DataURL、Canvas、SVG）</li>
-      <li>可自訂 QR Code 的外觀</li>
-      <li>支援錯誤修正等級設定</li>
-      <li>支援 UTF-8 編碼的文字</li>
-    </ul>
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4 text-gray-700">功能特點</h2>
+      <ul class="list-disc list-inside space-y-2 text-gray-600">
+        <li>支援多種輸出格式（DataURL、Canvas、SVG）</li>
+        <li>可自訂 QR Code 的外觀</li>
+        <li>支援錯誤修正等級設定</li>
+        <li>支援 UTF-8 編碼的文字</li>
+      </ul>
+    </section>
 
-    <h2>進階設定選項</h2>
-    <p>可以透過選項物件來自訂 QR Code 的外觀：</p>
-    <CodeBlock>{{ advancedCode }}</CodeBlock>
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4 text-gray-700">進階設定選項</h2>
+      <p class="text-gray-600 mb-4">可以透過選項物件來自訂 QR Code 的外觀：</p>
+      <CodeBlock class="my-4">{{ advancedCode }}</CodeBlock>
+    </section>
 
-    <h2>選項說明</h2>
-    <table
-      class="block md:table overflow-x-auto md:overflow-x-visible whitespace-nowrap md:whitespace-normal"
-    >
-      <thead>
-        <tr>
-          <th>選項</th>
-          <th>預設值</th>
-          <th>說明</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>version</td>
-          <td>自動</td>
-          <td>QR Code 版本（1-40）</td>
-        </tr>
-        <tr>
-          <td>errorCorrectionLevel</td>
-          <td>'M'</td>
-          <td>錯誤修正等級（L: 7%, M: 15%, Q: 25%, H: 30%）</td>
-        </tr>
-        <tr>
-          <td>width</td>
-          <td>256</td>
-          <td>QR Code 的寬度（像素）</td>
-        </tr>
-        <tr>
-          <td>margin</td>
-          <td>4</td>
-          <td>邊距大小（模組）</td>
-        </tr>
-      </tbody>
-    </table>
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4 text-gray-700">選項說明</h2>
+      <div class="overflow-x-auto shadow-md rounded-lg">
+        <table class="min-w-full bg-white">
+          <thead class="bg-gray-50">
+            <tr>
+              <th>選項</th>
+              <th>預設值</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr>
+              <td>version</td>
+              <td>自動</td>
+              <td>QR Code 版本（1-40）</td>
+            </tr>
+            <tr>
+              <td>errorCorrectionLevel</td>
+              <td>'M'</td>
+              <td>錯誤修正等級（L: 7%, M: 15%, Q: 25%, H: 30%）</td>
+            </tr>
+            <tr>
+              <td>width</td>
+              <td>256</td>
+              <td>QR Code 的寬度（像素）</td>
+            </tr>
+            <tr>
+              <td>margin</td>
+              <td>4</td>
+              <td>邊距大小（模組）</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-    <h2>Canvas 模式</h2>
-    <p>除了產生 DataURL，也可以直接在 Canvas 上繪製：</p>
-    <CodeBlock>{{ canvasCode }}</CodeBlock>
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4 text-gray-700">Canvas 模式</h2>
+      <p class="text-gray-600 mb-4">
+        除了產生 DataURL，也可以直接在 Canvas 上繪製：
+      </p>
+      <CodeBlock class="my-4">{{ canvasCode }}</CodeBlock>
+    </section>
 
     <h2>注意事項</h2>
     <ul>
