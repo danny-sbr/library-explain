@@ -10,6 +10,8 @@
   },
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 80,
   "css.customData": [
     ".vscode/tailwind.json"
   ]
