@@ -26,7 +26,7 @@ const links = [
     </nav>
   </header>
 
-  <article class="container mx-auto">
+  <article class="container mx-auto py-5">
     <slot />
   </article>
 
