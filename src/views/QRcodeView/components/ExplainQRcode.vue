@@ -152,7 +152,7 @@ QRCode.toCanvas(canvas, text, options)`
     <a
       href="https://www.npmjs.com/package/qrcode"
       target="_blank"
-      class="text-blue-500 hover:text-blue-600 underline"
+      class="text-blue-600 hover:text-blue-800 transition-colors duration-300"
       >qrcode 官方網站</a
     >
   </p>

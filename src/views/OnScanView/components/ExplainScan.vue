@@ -78,7 +78,7 @@ const decodeCode = `onScan.attachTo(document, {
     <a
       href="https://a.kabachnik.info/onscan-js-playground.html"
       target="_blank"
-      class="text-blue-600 hover:text-blue-800"
+      class="text-blue-600 hover:text-blue-800 transition-colors duration-300"
       >線上 demo</a
     >
     <br />

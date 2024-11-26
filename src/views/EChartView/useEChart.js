@@ -47,9 +47,13 @@ export function useEChart(elRef, initialOption = {}) {
   })
 
   // 當元件卸載時，斷開 resizeObserver
+  // 並且釋放圖表實體
   onUnmounted(() => {
     if (resizeObserver) {
       resizeObserver.disconnect()
+    }
+    if (chartInstance) {
+      chartInstance.dispose()
     }
   })
 
