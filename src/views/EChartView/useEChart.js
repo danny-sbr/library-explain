@@ -1,28 +1,29 @@
-import { nextTick, unref, onMounted, onUnmounted } from 'vue'
+import { nextTick, unref, onMounted, onUnmounted, shallowRef } from 'vue'
 import * as echarts from 'echarts'
 
 export function useEChart(elRef, initialOption = {}) {
-  /* 這裡的 chartInstance 使用 let 方式宣告是因為避免 echart 實體被 vue 3 代理，
-    因此使用 let 而不是使用 ref
-    參見 https://github.com/apache/echarts/issues/17723
-    參見 https://blog.csdn.net/youyudehan/article/details/135222342
+  /* 這裡的 chartInstance 使用 shallowRef 方式宣告是因為 echart 實體是 immutable，
+    因此使用 shallowRef 避免深層代理
+    參見 https://github.com/apache/echarts/issues/17723#issuecomment-1268311307
+    參見 https://segmentfault.com/a/1190000044349638
   */
-  let chartInstance
+
+  const chartInstance = shallowRef(null)
   let resizeObserver
 
   // 初始化圖表
   const initChart = () => {
     const el = unref(elRef)
     if (!el) return
-    chartInstance = echarts.init(el)
+    chartInstance.value = echarts.init(el)
     setOption(initialOption)
   }
 
   // 設置圖表選項
   const setOption = newOption => {
     nextTick(() => {
-      if (chartInstance) {
-        chartInstance.setOption(newOption)
+      if (chartInstance.value) {
+        chartInstance.value.setOption(newOption)
       } else {
         initChart()
       }
@@ -30,7 +31,7 @@ export function useEChart(elRef, initialOption = {}) {
   }
 
   function resize() {
-    chartInstance?.resize()
+    chartInstance.value?.resize()
   }
 
   function watchEl() {
@@ -52,8 +53,8 @@ export function useEChart(elRef, initialOption = {}) {
     if (resizeObserver) {
       resizeObserver.disconnect()
     }
-    if (chartInstance) {
-      chartInstance.dispose()
+    if (chartInstance.value) {
+      chartInstance.value.dispose()
     }
   })
 
