@@ -11,6 +11,10 @@ export function useEChart(elRef, initialOption = {}) {
   const chartInstance = shallowRef(null)
   let resizeObserver
 
+  // 是否為第一次 resize
+  let isFirstResize = true
+
+  resize()
   // 初始化圖表
   const initChart = () => {
     const el = unref(elRef)
@@ -36,7 +40,16 @@ export function useEChart(elRef, initialOption = {}) {
 
   function watchEl() {
     if (!resizeObserver && elRef.value) {
-      resizeObserver = new ResizeObserver(() => resize())
+      resizeObserver = new ResizeObserver(() => {
+        // 如果在初始化圖表時立刻觸發了 resize 或其他操作，可能會中斷初始動畫。
+        // 由於程式中使用了 ResizeObserver，這可能會導致 resize 事件在圖表初始化完成之前被觸發，從而中斷動畫。
+        // 為了避免這種情況，我們需要檢查是否為第一次 resize，如果是，則跳過它。
+        if (isFirstResize) {
+          isFirstResize = false
+          return
+        }
+        resize()
+      })
       resizeObserver.observe(elRef.value)
     }
   }

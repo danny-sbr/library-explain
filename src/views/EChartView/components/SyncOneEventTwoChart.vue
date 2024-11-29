@@ -192,7 +192,6 @@ const { chartInstance: chartInstance1 } = useEChart(chartRef1, options1)
 const { chartInstance: chartInstance2 } = useEChart(chartRef2, options2)
 onMounted(() => {
   let isSyncing = false
-  console.log(chartInstance1.value)
   chartInstance1.value.on('dataZoom', params => {
     if (isSyncing) return
     chartInstance2.value.dispatchAction({
