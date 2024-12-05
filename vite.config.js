@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [vue()],
   base: '/library-explain/',
   server: {
-    port: 5300,
+    port: 3905,
   },
   resolve: {
     alias: {
