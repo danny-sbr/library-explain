@@ -216,6 +216,15 @@ onMounted(() => {
   <h2 class="text-2xl text-center font-bold text-gray-800 my-6">
     同步一個事件兩個圖表範例
   </h2>
+  <div class="mb-4 text-3xl font-bold">
+    如需了解完整程式碼實作細節，請參考此專案原始碼
+  </div>
+  <ul class="bg-gray-100 text-gray-600 list-disc pl-6 space-y-2 p-4 rounded-lg">
+    <li>此範例展示了兩個圖表之間的資料縮放同步功能</li>
+    <li>當您在任一圖表上進行縮放操作時，其他圖表會同步更新</li>
+    <li>使用滑鼠滾輪或拖曳下方滑桿來測試縮放效果</li>
+    <li>所有圖表共用相同的資料範圍，確保視覺一致性</li>
+  </ul>
   <div class="flex">
     <div ref="chartRef1" class="h-[50vh] w-full"></div>
     <div ref="chartRef2" class="h-[50vh] w-full"></div>

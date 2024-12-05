@@ -1,6 +1,39 @@
 import { nextTick, unref, onMounted, onUnmounted, shallowRef } from 'vue'
 import * as echarts from 'echarts'
 
+/**
+ * ECharts 圖表的 Vue Composable 函式
+ * 用於管理 ECharts 實體的生命週期、自動調整大小和更新選項
+ *
+ * @param {import('vue').Ref<HTMLElement>} elRef - Vue ref，指向要渲染圖表的 DOM 元素
+ * @param {Object} [initialOption={}] - ECharts 的初始設定選項
+ *
+ * @returns {{
+ *   setOption: (newOption: Object) => void, // 更新圖表設定的函式
+ *   chartInstance: import('vue').ShallowRef<echarts.ECharts | null> // ECharts 實體的 shallow ref
+ * }}
+ *
+ * @example
+ * // 在元件中使用
+ * const chartEl = ref(null)
+ * const { setOption, chartInstance } = useEChart(chartEl, {
+ *   // 初始 ECharts 設定
+ *   title: { text: '我的圖表' },
+ *   series: [{ type: 'line', data: [1, 2, 3] }]
+ * })
+ *
+ * // 更新圖表設定
+ * setOption({
+ *   series: [{ data: [4, 5, 6] }]
+ * })
+ *
+ * @description
+ * 這個 composable 會自動處理：
+ * - 圖表的初始化和銷毀
+ * - 容器大小變化時自動調整圖表尺寸
+ * - 避免初始化動畫被中斷的問題
+ * - 使用 shallowRef 優化效能
+ */
 export function useEChart(elRef, initialOption = {}) {
   /* 這裡的 chartInstance 使用 shallowRef 方式宣告是因為 echart 實體是 immutable，
     因此使用 shallowRef 避免深層代理

@@ -6,10 +6,12 @@ import SyncOneEventTwoChart from './components/SyncOneEventTwoChart.vue'
 import ConnectChart from './components/ConnectChart.vue'
 </script>
 <template>
-  <ExplainEChart />
-  <MyChart />
-  <SyncOneEventMultipleChart />
-  <SyncOneEventTwoChart />
-  <ConnectChart />
+  <div class="space-y-10">
+    <ExplainEChart />
+    <MyChart />
+    <SyncOneEventTwoChart />
+    <SyncOneEventMultipleChart />
+    <ConnectChart />
+  </div>
 </template>
 <style scoped></style>
