@@ -1,8 +1,7 @@
 <script setup>
 import CodeBlock from '@/components/CodeBlock.vue'
 
-const declareZodSchemaCode = `
-const validationSchema = toTypedSchema(
+const declareZodSchemaCode = `const validationSchema = toTypedSchema(
   z.object({
     username: z
       .string({
@@ -28,18 +27,31 @@ const validationSchema = toTypedSchema(
   }),
 )`
 
-const useFormCode = `
-const { defineField, handleSubmit, resetForm, errors } = useForm({
+const useFormCode = `const { defineField, handleSubmit, resetForm, errors } = useForm({
   validationSchema: validationSchema,
 })`
 
-const defineFieldCode = `
-const [username, usernameAttrs] = defineField('username')
-const [email, emailAttrs] = defineField('email')
-const [age, ageAttrs] = defineField('age')`
+const defineFieldCode = `const [username, usernameAttrs] = defineField('username', {
+  validateOnInput: false,
+  validateOnChange: false,
+  validateOnModelUpdate: false,
+  validateOnBlur: true,
+})
+const [email, emailAttrs] = defineField('email', {
+  validateOnInput: false,
+  validateOnChange: false,
+  validateOnModelUpdate: false,
+  validateOnBlur: true,
+})
+const [age, ageAttrs] = defineField('age', {
+  validateOnInput: false,
+  validateOnChange: false,
+  validateOnModelUpdate: false,
+  validateOnBlur: true,
+})
+`
 
-const templateCode = `
-<input
+const templateCode = `<input
   id="username"
   autocomplete="off"
   v-model="username"
@@ -54,8 +66,7 @@ const templateCode = `
   {{ errors.username }}
 </p>`
 
-const submitCode = `
-const onSubmit = handleSubmit(values => {
+const submitCode = `const onSubmit = handleSubmit(values => {
   console.log('表單提交成功：', values)
   alert('表單提交成功！')
   resetForm()

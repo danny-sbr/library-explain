@@ -34,17 +34,23 @@ const {
   value: username,
   errorMessage: nameError,
   handleBlur: handleUsernameBlur,
-} = useField('username')
+} = useField('username', undefined, {
+  validateOnValueUpdate: false,
+})
 const {
   value: email,
   errorMessage: emailError,
   handleBlur: handleEmailBlur,
-} = useField('email')
+} = useField('email', undefined, {
+  validateOnValueUpdate: false,
+})
 const {
   value: age,
   errorMessage: ageError,
   handleBlur: handleAgeBlur,
-} = useField('age')
+} = useField('age', undefined, {
+  validateOnValueUpdate: false,
+})
 
 const onSubmit = handleSubmit(values => {
   console.log('表單提交成功：', values)
@@ -71,6 +77,7 @@ const onSubmit = handleSubmit(values => {
           nameError
         }}</span>
       </div>
+      <!-- 省略其他欄位 -->
 
       <div class="space-y-2">
         <label for="email" class="block font-semibold">電子郵件：</label>
