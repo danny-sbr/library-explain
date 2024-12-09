@@ -78,6 +78,15 @@
           <li>簡單的圖表範例</li>
         </ul>
       </div>
+      <div class="bg-gray-50 p-6 rounded-lg shadow">
+        <h2 class="text-blue-500 mb-4 text-2xl">表單驗證</h2>
+        <p class="text-gray-600 mb-4">
+          使用 vee-validate 實作的表單驗證功能，提供：
+        </p>
+        <ul class="pl-6 space-y-2 text-gray-600">
+          <li>支援多種表單驗證規則</li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
