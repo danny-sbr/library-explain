@@ -1,4 +1,7 @@
 <script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
+import * as echarts from 'echarts'
+
 // 引入所需的元件和函式庫
 import CodeBlock from '@/components/CodeBlock.vue'
 
@@ -47,13 +50,57 @@ onUnmounted(() => {
 <template>
   <div ref="chartRef" style="width: 600px; height: 400px;"></div>
 </template>`
+
+const chartRef = ref(null)
+let myChart = null
+
+onMounted(() => {
+  // 初始化 ECharts 實例
+  myChart = echarts.init(chartRef.value)
+
+  // 設定圖表配置
+  const option = {
+    title: {
+      text: '範例圖表',
+    },
+    xAxis: {
+      type: 'category',
+      data: ['一月', '二月', '三月', '四月', '五月'],
+    },
+    yAxis: {
+      type: 'value',
+    },
+    series: [
+      {
+        data: [120, 200, 150, 80, 70],
+        type: 'line',
+      },
+    ],
+  }
+
+  // 使用配置設定渲染圖表
+  myChart.setOption(option)
+})
+onUnmounted(() => {
+  // 釋放 ECharts 實例資源
+  if (myChart) {
+    myChart.dispose()
+    myChart = null
+  }
+})
 </script>
 
 <template>
-  <!-- 使用 CodeBlock 元件顯示程式碼範例 -->
-  <CodeBlock>{{ codeString }}</CodeBlock>
+  <h1 class="text-center">ECharts 圖表展示</h1>
 
-  <!-- ECharts 說明區塊 -->
+  <div class="mb-5">
+    <div ref="chartRef" style="width: 100%; height: 400px"></div>
+  </div>
+
+  <div class="mb-5">
+    <h2 class="text-2xl font-bold">程式碼範例</h2>
+    <CodeBlock>{{ codeString }}</CodeBlock>
+  </div>
   <h2 class="text-2xl font-bold mt-6 mb-4">ECharts 簡介</h2>
   <p class="mb-6">
     ECharts 是一個功能強大的開源視覺化圖表函式庫，現已成為 Apache
