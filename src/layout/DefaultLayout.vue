@@ -9,6 +9,7 @@ const links = [
   { to: '/qrcode', text: 'QR Code' },
   { to: '/print-js', text: '列印功能' },
   { to: '/echart', text: 'EChart' },
+  { to: '/vee-validate', text: '表單驗證' },
 ]
 </script>
 
