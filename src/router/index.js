@@ -39,6 +39,11 @@ const router = createRouter({
       name: 'echart',
       component: () => import('../views/EChartView/EChartView.vue'),
     },
+    {
+      path: '/vee-validate',
+      name: 'vee-validate',
+      component: () => import('../views/VeeValidateView/VeeValidateView.vue'),
+    },
   ],
 })
 
