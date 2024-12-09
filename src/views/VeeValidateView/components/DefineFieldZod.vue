@@ -33,9 +33,24 @@ const { defineField, handleSubmit, resetForm, errors } = useForm({
   validationSchema: validationSchema,
 })
 
-const [username, usernameAttrs] = defineField('username')
-const [email, emailAttrs] = defineField('email')
-const [age, ageAttrs] = defineField('age')
+const [username, usernameAttrs] = defineField('username', {
+  validateOnInput: false,
+  validateOnChange: false,
+  validateOnModelUpdate: false,
+  validateOnBlur: true,
+})
+const [email, emailAttrs] = defineField('email', {
+  validateOnInput: false,
+  validateOnChange: false,
+  validateOnModelUpdate: false,
+  validateOnBlur: true,
+})
+const [age, ageAttrs] = defineField('age', {
+  validateOnInput: false,
+  validateOnChange: false,
+  validateOnModelUpdate: false,
+  validateOnBlur: true,
+})
 
 const onSubmit = handleSubmit(values => {
   console.log('表單提交成功：', values)
