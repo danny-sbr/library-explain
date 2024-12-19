@@ -14,6 +14,8 @@ import * as echarts from 'echarts'
  * }}
  *
  * @example
+ *
+ * ```js
  * // 在元件中使用
  * const chartEl = ref(null)
  * const { setOption, chartInstance } = useEChart(chartEl, {
@@ -21,11 +23,14 @@ import * as echarts from 'echarts'
  *   title: { text: '我的圖表' },
  *   series: [{ type: 'line', data: [1, 2, 3] }]
  * })
+ * ```
  *
+ * ```js
  * // 更新圖表設定
  * setOption({
  *   series: [{ data: [4, 5, 6] }]
  * })
+ * ```
  *
  * @description
  * 這個 composable 會自動處理：
