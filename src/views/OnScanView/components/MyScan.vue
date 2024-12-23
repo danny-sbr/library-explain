@@ -91,10 +91,17 @@ onMounted(() => {
 
   // 初始化 onScan.js，並將選項附加到 document
   onScan.attachTo(document, scannerOptions)
+
+  document.addEventListener('scan', function (sScanned, iQty) {
+    console.log('this is scan', sScanned, iQty)
+  })
 })
 
 onUnmounted(() => {
   onScan.detachFrom(document)
+  document.removeEventListener('scan', function (sScanned, iQty) {
+    console.log('this is scan destroy', sScanned, iQty)
+  })
 })
 </script>
 
