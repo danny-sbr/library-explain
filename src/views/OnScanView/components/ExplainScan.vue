@@ -81,9 +81,16 @@ const decodeCode = `onScan.attachTo(document, {
       class="text-blue-600 hover:text-blue-800 transition-colors duration-300"
       >線上 demo</a
     >
-    <br />
-    此外，安裝包中包含類似的 demo，可在本機的 lib 資料夾中載入
+    安裝包中包含類似的 demo，可在本機的 lib 資料夾中載入
     <code class="bg-gray-100 px-1 rounded">index.html</code> 進行測試。
+  </p>
+  <p class="mb-6">
+    <a
+      href="https://github.com/axenox/onscan.js/"
+      target="_blank"
+      class="text-blue-600 hover:text-blue-800 transition-colors duration-300"
+      >完整文件</a
+    >可在 GitHub 專案頁面上查看，包含詳細的設定選項與使用說明。
   </p>
 
   <h2 class="text-2xl font-semibold mb-4">需求條件</h2>
@@ -208,6 +215,54 @@ const decodeCode = `onScan.attachTo(document, {
             為指定的掃描程式碼觸發
             <code class="bg-gray-100 px-1 rounded">scan</code>
             事件，用於手動觸發監聽器（例如測試用）。
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="text-2xl font-semibold mb-4">事件</h2>
+
+  <div class="overflow-x-auto">
+    <table class="w-full border-collapse mb-6">
+      <thead>
+        <tr class="bg-gray-100">
+          <th class="border border-gray-300 p-2 text-left">事件名稱</th>
+          <th class="border border-gray-300 p-2 text-left">監聽器參數</th>
+          <th class="border border-gray-300 p-2 text-left">說明</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border border-gray-300 p-2">scan</td>
+          <td class="border border-gray-300 p-2">sScanned, iQty</td>
+          <td class="border border-gray-300 p-2">
+            成功掃描後觸發。處理器參數：<br />
+            - <code class="bg-gray-100 px-1 rounded">sScanned</code> - [字串]
+            掃描到的程式碼<br />
+            - <code class="bg-gray-100 px-1 rounded">iQty</code> - [整數] 數量
+          </td>
+        </tr>
+        <tr>
+          <td class="border border-gray-300 p-2">scanButtonLongPress</td>
+          <td class="border border-gray-300 p-2">無</td>
+          <td class="border border-gray-300 p-2">
+            當掃描按鈕按住超過
+            <code class="bg-gray-100 px-1 rounded"
+              >scanButtonLongPressThreshold</code
+            >
+            設定的時間後觸發。此功能僅在掃描按鈕作為按鍵使用且已設定
+            <code class="bg-gray-100 px-1 rounded">scanButtonKeyCode</code>
+            時有效。處理器不帶任何參數。
+          </td>
+        </tr>
+        <tr>
+          <td class="border border-gray-300 p-2">scanError</td>
+          <td class="border border-gray-300 p-2">oDebug</td>
+          <td class="border border-gray-300 p-2">
+            當掃描的字串因限制而被捨棄時觸發。處理器參數：<br />
+            - <code class="bg-gray-100 px-1 rounded">oDebug</code> - [物件]
+            包含各種除錯資料的純物件
           </td>
         </tr>
       </tbody>
