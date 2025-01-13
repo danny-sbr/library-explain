@@ -43,6 +43,20 @@
 - 支援進階列印選項設定
 - 提供訂單資訊列印範例
 
+### 6. 表單驗證
+整合 vee-validate 函式庫：
+- 支援多種表單驗證規則
+- 即時驗證功能
+- 自訂錯誤訊息
+
+### 7. ECharts 圖表
+整合 ECharts 函式庫：
+- 支援多種圖表類型
+- 自訂圖表樣式
+- 支援多種輸出格式
+- 支援進階圖表選項設定
+- 提供簡單的圖表範例
+
 ## 開發環境設定
 
 ### 建議開發工具
@@ -95,34 +109,73 @@ pnpm lint
 ```
 ├── src/
 │   ├── assets/                 # 靜態資源
-│   │   ├── main.css           # 主要樣式
-│   │   └── normalize.css      # CSS Reset
 │   │
 │   ├── components/            # 共用元件
 │   │   └── CodeBlock.vue      # 程式碼區塊元件
 │   │
+│   ├── layout/                # 版面配置
+│   │   └── DefaultLayout.vue  # 預設版面
+│   │
+│   ├── style/                 # 樣式檔案
+│   │   ├── main.css          # 主要樣式
+│   │   └── normalize.css      # CSS Reset
+│   │
 │   ├── views/                 # 頁面元件
-│   │   ├── HomeView/         
-│   │   │   └── HomeView.vue   # 首頁
+│   │   ├── EChartView/       # 圖表功能
+│   │   │   ├── components/
+│   │   │   │   ├── Chart/
+│   │   │   │   │   ├── BarLineMix.vue
+│   │   │   │   │   ├── BasicBar.vue
+│   │   │   │   │   ├── BasicLine.vue
+│   │   │   │   │   ├── BasicPie.vue
+│   │   │   │   │   ├── CategoryComparison.vue
+│   │   │   │   │   ├── HorizontalBar.vue
+│   │   │   │   │   └── StackedBar.vue
+│   │   │   │   ├── ConnectChart.vue
+│   │   │   │   ├── ExplainEChart.vue
+│   │   │   │   └── MyChart.vue
+│   │   │   └── EChartView.vue
 │   │   │
 │   │   ├── FullCalendarView/  # 行事曆功能
 │   │   │   ├── components/
 │   │   │   │   ├── MyFullCalendar.vue
 │   │   │   │   ├── ExplainFullCalendar.vue
-│   │   │   │   ├── explainFullCalendar.js
 │   │   │   │   └── event-utils.js
 │   │   │   └── FullCalendarView.vue
 │   │   │
 │   │   ├── Html2CanvasView/   # 截圖功能
 │   │   │   ├── components/
-│   │   │   │   └── ExplainCanvas.vue
+│   │   │   │   ├── ExplainCanvas.vue
+│   │   │   │   └── MyHtml2Canvas.vue
 │   │   │   └── Html2CanvasView.vue
 │   │   │
-│   │   └── OnScanView/        # 掃描器功能
-│   │       ├── components/
-│   │       │   ├── MyScan.vue
-│   │       │   └── ExplainScan.vue
-│   │       └── OnScanView.vue
+│   │   ├── OnScanView/        # 掃描器功能
+│   │   │   ├── components/
+│   │   │   │   ├── ExplainScan.vue
+│   │   │   │   └── MyScan.vue
+│   │   │   └── OnScanView.vue
+│   │   │
+│   │   ├── PrintJsView/       # 列印功能
+│   │   │   ├── components/
+│   │   │   │   ├── ExplainPrintJS.vue
+│   │   │   │   └── MyPrintJS.vue
+│   │   │   └── PrintJsView.vue
+│   │   │
+│   │   ├── QRcodeView/        # QR Code功能
+│   │   │   ├── components/
+│   │   │   │   ├── ExplainQRcode.vue
+│   │   │   │   └── MyQRcode.vue
+│   │   │   └── QRcodeView.vue
+│   │   │
+│   │   ├── VeeValidateView/   # 表單驗證功能
+│   │   │   ├── components/
+│   │   │   │   ├── DefineFieldZod.vue
+│   │   │   │   ├── DiffDefinedUseField.vue
+│   │   │   │   ├── ExplainDefineField.vue
+│   │   │   │   └── UseFieldZod.vue
+│   │   │   └── VeeValidateView.vue
+│   │   │
+│   │   └── HomeView.vue       # 首頁
 │   │
 │   ├── router/                # 路由設定
 │   │   └── index.js
