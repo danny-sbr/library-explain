@@ -93,6 +93,16 @@ const decodeCode = `onScan.attachTo(document, {
     >可在 GitHub 專案頁面上查看，包含詳細的設定選項與使用說明。
   </p>
 
+  <p class="mb-6">
+    <a
+      href="https://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes"
+      target="_blank"
+      class="text-blue-600 hover:text-blue-800 transition-colors duration-300"
+      >key code 列表</a
+    >
+    可參考此網站，查看各按鍵的 key code
+  </p>
+
   <h2 class="text-2xl font-semibold mb-4">需求條件</h2>
   <ol class="list-decimal pl-6 mb-6">
     <li class="mb-2">
