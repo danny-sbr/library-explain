@@ -4,7 +4,7 @@ import onScan from 'onscan.js'
 
 onMounted(() => {
   const scannerOptions = {
-    // 掃描成功時觸發的回呼，會傳入掃描的代碼和數量
+    // 掃描成功時觸發的回呼，會傳入掃描的字串和數量
     onScan: function (sScanned, iQty) {
       console.log('Scanned: ' + iQty + 'x ' + sScanned) // 顯示掃描的結果
     },
@@ -19,10 +19,10 @@ onMounted(() => {
       console.error('Scan error:', oDebug) // 顯示錯誤資訊
     },
 
-    // 偵測到每一個按鍵事件時觸發，傳入按鍵代碼及完整事件
+    // 偵測到每一個按鍵事件時觸發，傳入按鍵代號及完整事件
     onKeyDetect: function (iKeyCode, oEvent) {
       console.log('onKeyDetect oEvent', oEvent)
-      console.log('Key detected:', iKeyCode) // 顯示按鍵代碼
+      console.log('Key detected:', iKeyCode) // 顯示按鍵代號
       return iKeyCode !== 27 // 如果按鍵是 "Esc"，則不處理此事件
     },
 
@@ -55,16 +55,16 @@ onMounted(() => {
     // 掃描碼的最小長度，若未達此長度則視為錯誤掃描
     minLength: 6,
 
-    // 掃描碼結束時的後綴按鍵代碼，例如 Enter（13）和 Tab（9）
+    // 掃描碼結束時的後綴按鍵代號，例如 Enter（13）和 Tab（9）
     suffixKeyCodes: [9, 13],
 
-    // 掃描碼開頭的前綴按鍵代碼（若有）
+    // 掃描碼開頭的前綴按鍵代號（若有）
     prefixKeyCodes: [],
 
     // 忽略掃描事件，當焦點在指定的元素上時（例如輸入框）
     ignoreIfFocusOn: 'input, textarea',
 
-    // 掃描按鈕的按鍵代碼，僅當按鈕本身即是按鍵時有效
+    // 掃描按鈕的按鍵代號，僅當按鈕本身即是按鍵時有效
     scanButtonKeyCode: 112, // 假設掃描按鈕為 F1 鍵
 
     // 長按掃描按鈕的時間（毫秒）後觸發 onScanButtonLongPress

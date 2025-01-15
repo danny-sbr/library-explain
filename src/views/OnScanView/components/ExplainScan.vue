@@ -23,7 +23,7 @@ onScan.attachTo(document, {
 // 程式模擬掃描以測試事件處理器
 onScan.simulate(document, '1234567890123');
 
-// 模擬按鍵代碼
+// 模擬按鍵代號
 onScan.simulate(document, [48,49,50]);
 
 // 模擬 keydown 事件
