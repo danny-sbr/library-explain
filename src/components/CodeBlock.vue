@@ -3,6 +3,7 @@ import { onMounted } from 'vue'
 import Prism from 'prismjs'
 import 'prismjs/themes/prism.css'
 import 'prismjs/plugins/line-numbers/prism-line-numbers.js'
+import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
 
 onMounted(() => {
   window.Prism = window.Prism || {}
@@ -12,9 +13,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div>
-    <pre><code class="language-javascript line-numbers"><slot /></code></pre>
-  </div>
+  <pre><code class="language-javascript line-numbers"><slot /></code></pre>
 </template>
 
 <style scoped></style>
