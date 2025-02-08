@@ -6,6 +6,7 @@ import BasicBar from './Chart/BasicBar.vue'
 import BarLineMix from './Chart/BarLineMix.vue'
 import CategoryComparison from './Chart/CategoryComparison.vue'
 import HorizontalBar from './Chart/HorizontalBar.vue'
+import WaterfallBar from './Chart/WaterfallBar.vue'
 </script>
 <template>
   <h2 class="text-2xl font-bold text-gray-800 mb-6">使用 ECharts 製作圖表</h2>
@@ -42,5 +43,6 @@ import HorizontalBar from './Chart/HorizontalBar.vue'
     </div>
   </div>
   <HorizontalBar />
+  <WaterfallBar />
 </template>
 <style scoped></style>
