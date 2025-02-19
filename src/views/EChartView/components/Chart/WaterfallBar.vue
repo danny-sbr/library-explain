@@ -38,9 +38,12 @@ const calculateStepData = () => {
 
 const { stepData, labels } = calculateStepData()
 
+console.log(stepData)
+console.log(labels)
+
 const options = {
   title: {
-    text: '月度收入階梯圖',
+    text: '月度收入瀑布圖',
     left: 'center',
   },
   tooltip: {
