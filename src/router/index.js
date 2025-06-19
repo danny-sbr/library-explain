@@ -44,6 +44,11 @@ const router = createRouter({
       name: 'vee-validate',
       component: () => import('../views/VeeValidateView/VeeValidateView.vue'),
     },
+    {
+      path: '/lodash',
+      name: 'lodash',
+      component: () => import('../views/LodashView/LodashView.vue'),
+    },
   ],
 })
 
