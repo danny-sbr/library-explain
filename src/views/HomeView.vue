@@ -87,6 +87,17 @@
           <li>支援多種表單驗證規則</li>
         </ul>
       </div>
+      <div class="bg-gray-50 p-6 rounded-lg shadow">
+        <h2 class="text-blue-500 mb-4 text-2xl">Lodash 工具函式庫</h2>
+        <p class="text-gray-600 mb-4">使用 Lodash 實作的資料處理功能，提供：</p>
+        <ul class="pl-6 space-y-2 text-gray-600">
+          <li>陣列處理函式（map、filter）</li>
+          <li>物件操作工具（keys、pickBy）</li>
+          <li>數學運算函式（round、floor）</li>
+          <li>資料分組與檢驗（groupBy、isPlainObject）</li>
+          <li>互動式範例展示與說明文件</li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
