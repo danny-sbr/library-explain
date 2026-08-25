@@ -9,6 +9,7 @@ export default defineConfig({
   base: '/library-explain/',
   server: {
     port: 3905,
+    host: '0.0.0.0',
   },
   resolve: {
     alias: {
